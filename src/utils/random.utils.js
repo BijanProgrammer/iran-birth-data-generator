@@ -60,6 +60,10 @@ export function generateRandomBloodType() {
     return generateRandomItem(BLOOD_TYPE);
 }
 
+export function generateRandomYesOrNo(options = {}) {
+    return generateRandomBoolean(options) ? 'بله' : 'خیر';
+}
+
 export function generateRandomGender() {
     return generateRandomBoolean() ? 'پسر' : 'دختر';
 }

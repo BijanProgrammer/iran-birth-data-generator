@@ -2,7 +2,6 @@ import fs from 'fs/promises';
 
 import {
     generateRandomBloodType,
-    generateRandomBoolean,
     generateRandomDate,
     generateRandomDouble,
     generateRandomEyeColor,
@@ -11,6 +10,7 @@ import {
     generateRandomInteger,
     generateRandomState,
     generateRandomSurgeryType,
+    generateRandomYesOrNo,
 } from './utils/random.utils.js';
 import {generateCsvContent} from './utils/csv.utils.js';
 import {HEADERS_ENGLISH_NAME_TO_PERSIAN_NAME} from './data/headers-english-name-to-persian-name.js';
@@ -30,11 +30,11 @@ const generateRandomData = () => {
         hairColor: generateRandomHairColor(),
         eyeColor: generateRandomEyeColor(),
         bloodType: generateRandomBloodType(),
-        isBabyDead: generateRandomBoolean({chanceOfSuccess: 0.01}),
-        isMotherDead: generateRandomBoolean({chanceOfSuccess: 0.02}),
-        hasDisability: generateRandomBoolean({chanceOfSuccess: 0.03}),
-        doesNeedIntensiveCare: generateRandomBoolean({chanceOfSuccess: 0.05}),
-        isInsured: generateRandomBoolean({chanceOfSuccess: 0.9}),
+        isBabyDead: generateRandomYesOrNo({chanceOfSuccess: 0.01}),
+        isMotherDead: generateRandomYesOrNo({chanceOfSuccess: 0.02}),
+        hasDisability: generateRandomYesOrNo({chanceOfSuccess: 0.03}),
+        doesNeedIntensiveCare: generateRandomYesOrNo({chanceOfSuccess: 0.05}),
+        isInsured: generateRandomYesOrNo({chanceOfSuccess: 0.9}),
     }));
 };
 
